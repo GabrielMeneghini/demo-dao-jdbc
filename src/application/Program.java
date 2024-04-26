@@ -1,11 +1,11 @@
 package application;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.dao.impl.SellerDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -33,15 +33,12 @@ public class Program {
 		for(Seller x : sellerList) {
 			System.out.println(x);
 		}
-
-		/*
+		
 		System.out.println("\n=== TEST 4: seller insert ===");
 		Seller insertSeller = new Seller(null, "Mariana", "mariana@gmail.com", new Date(), 5000.0, dep);
 		sellerDao.insert(insertSeller);
 		System.out.println("Inserted! New id = " + insertSeller.getId());
-		*/
 		
-		/*
 		System.out.println("\n=== TEST 5: seller update ===");
 		seller = sellerDao.findById(12);
 		seller.setName("Esther");
@@ -50,7 +47,6 @@ public class Program {
 		seller.setDepartment(new Department(4, "Books"));
 		sellerDao.update(seller);
 		System.out.println("Updated completed! Seller updated to: " + seller);
-		*/
 		
 		System.out.println("\n=== TEST 6: seller delete ===");
 		System.out.print("Type seller id for deletion: ");
@@ -62,7 +58,6 @@ public class Program {
 			sellerDao.deleteById(id);
 			System.out.println("Deletion complete! Deleted seller: " + seller);
 		}
-		
 		
 		sc.close();
 	}
